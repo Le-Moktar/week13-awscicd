@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('build'){
+        stage('git checkout'){
             steps{
-                sh 'echo build'
+                git branch: 'main', url: 'https://github.com/Le-Moktar/week13-awscicd.git'
             }
         }
         stage('test'){
@@ -17,10 +17,10 @@ pipeline {
                 sh 'echo stage_$BUILD_ID'
             }
         }
-        stage('System-Test'){
-            steps{
-                sh 'cat /etc/os-release'
-            }
-        }
+        // stage('System-Test'){
+        //     steps{
+        //         sh 'cat /etc/os-release'
+        //     }
+        // }
     }
 }

@@ -17,5 +17,10 @@ pipeline {
                 sh 'echo stage_$BUILD_ID'
             }
         }
+        stage('System-Test'){
+            steps{
+                sh 'cat /etc/os-release'
+            }
+        }
     }
 }

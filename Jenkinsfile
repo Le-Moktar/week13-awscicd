@@ -12,5 +12,10 @@ pipeline {
                 sh 'echo test'
             }
         }
+        stage('stage number'){
+            steps{
+                sh 'echo stage_$BUILD_ID'
+            }
+        }
     }
 }

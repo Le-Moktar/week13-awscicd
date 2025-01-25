@@ -20,6 +20,12 @@ pipeline {
                 sh 'docker images'
             }
         }
-       
+       stage('system check'){
+            steps{
+                sh 'pwd'
+                sh 'ls'
+                sh 'cat /etc/os-release'
+            }
+        }
     }
 }

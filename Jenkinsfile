@@ -5,7 +5,7 @@ pipeline {
         BRANCH_NAME = 'main'
         GIT_URL = 'https://github.com/Le-Moktar/week13-awscicd.git'
         IMAGE_TAG = 'awscicd'
-        IMAGE_VERSION = '${BUILD_ID}'
+        IMAGE_VERSION = '${BUILD_NUMBER}'
     }
 
     stages {

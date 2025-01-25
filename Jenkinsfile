@@ -4,6 +4,8 @@ pipeline {
     environment{
         BRANCH_NAME = 'main'
         GIT_URL = 'https://github.com/Le-Moktar/week13-awscicd.git'
+        IMAGE_TAG = 'awscicd'
+        IMAGE_VERSION = '${BUILD_ID}'
     }
 
     stages {
@@ -14,19 +16,10 @@ pipeline {
         }
         stage('docker build'){
             steps{
-                sh 'docker build -t week13-awscicd .'
+                sh 'docker build -t "${IMAGE_TAG}" .'
                 sh 'docker images'
             }
         }
-        stage('stage number'){
-            steps{
-                sh 'echo stage_$BUILD_ID'
-            }
-        }
-        // stage('System-Test'){
-        //     steps{
-        //         sh 'cat /etc/os-release'
-        //     }
-        // }
+       
     }
 }
